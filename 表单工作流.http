@@ -1,0 +1,280 @@
+@endpoint = http://192.168.3.239:8090
+### 虚拟表单新增
+POST {{endpoint}}/api/crud/virtualForm/virtualForms
+content-type: application/json
+accessToken: {{token}}
+
+{
+  "entityName": "entityName",
+  "formName": "表单名",
+  "typeId": 6,
+  "designData": "{\n  \"schema\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"textarea_cUjUtT\": {\n        \"title\": \"编辑框\",\n        \"type\": \"string\",\n        \"format\": \"textarea\",\n        \"componentType\": \"text-area\"\n      },\n      \"textarea_FN8w5J\": {\n        \"title\": \"编辑框\",\n        \"type\": \"string\",\n        \"format\": \"textarea\",\n        \"componentType\": \"text-area\"\n      }\n    },\n    \"ui:displayType\": \"row\",\n    \"ui:showDescIcon\": true\n  },\n  \"displayType\": \"row\",\n  \"showDescIcon\": true\n}"
+}
+
+
+### 虚拟表单详情
+GET {{endpoint}}/api/crud/virtualForm/virtualForms/7
+content-type: application/json
+accessToken: {{token}}
+
+### 虚拟表单列表
+GET {{endpoint}}/api/crud/virtualForm/virtualForms
+content-type: application/json
+accessToken: {{token}}
+
+
+### 虚拟表单修改 children数组里面的信息用于修改字段信息
+PUT {{endpoint}}/api/crud/virtualForm/virtualForms/1
+content-type: application/json
+accessToken: {{token}}
+
+{
+  "entityName": "332",
+  "name": "2323",
+  "children":[
+    {
+      "componentType":"input",
+      "fieldName":"名字33",
+      "defaultValue":null,
+      "attributeName":"input_kga6e7",
+      "entityId":1,
+      "id":1,
+      "placeholder":null,
+      "fieldType":null,
+      "orgId":100000000000000001,
+      "required":false
+    },
+    {
+      "componentType":"number",
+      "fieldName":"数量22",
+      "defaultValue":null,
+      "attributeName":"number_xaA-al",
+      "entityId":1,
+      "id":2,
+      "placeholder":null,
+      "fieldType":null,
+      "orgId":100000000000000001,
+      "required":false
+    }
+  ],
+  "typeId": 7,
+  "designData": "{\n  \"schema\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"textarea_cUjUtT\": {\n        \"title\": \"编辑框2\",\n        \"type\": \"string\",\n        \"format\": \"textarea\",\n        \"componentType\": \"text-area\"\n      },\n      \"textarea_FN8w5J\": {\n        \"title\": \"编辑框\",\n        \"type\": \"string\",\n        \"format\": \"textarea\",\n        \"componentType\": \"text-area\"\n      }\n    },\n    \"ui:displayType\": \"row\",\n    \"ui:showDescIcon\": true\n  },\n  \"displayType\": \"row\",\n  \"showDescIcon\": true\n}"
+}
+
+### 虚拟表单删除
+DELETE {{endpoint}}/api/crud/virtualForm/virtualForms/2
+content-type: application/json
+accessToken: {{token}}
+
+
+
+
+### 根据id查看工作流详情
+GET {{endpoint}}/api/wf/processes/1397864825052286978
+content-type: application/json
+accessToken: {{token}}
+
+### 发起一个流程
+POST {{endpoint}}/api/wf/instances/instanceAndForm
+content-type: application/json
+accessToken: {{token}}
+
+{
+    "checkboxes_2yiV1D": [
+        "1"
+    ],
+    "textarea_LDp6Vg": "字段的参数",
+    "licence_-3jmUD": "字段的参数",
+    "input_Mb1NL0": "字段的参数",
+    "radio_RY1eYc": "字段的参数",
+    "image_ZDWUU9": "字段的参数",
+    "textarea_SKmnDG": "字段的参数",
+    "licence_82qMaP": "字段的参数",
+
+    "currentStepId": "1405820518367580161",
+    "currentUserId": "876708082437197827",
+    "processId": "1405086845078949890"
+
+}
+
+###  向前推进流程        相较于发起流程 需要额外的流程实例信息 此处提交的测试数据出自之前前端的提交
+POST  {{endpoint}}/api/wf/instances/instanceAndForm/push
+content-type: application/json
+accessToken: {{token}}
+
+
+ {
+    "code": "2021-5-28-标准请假流-16",
+    "stepType": "content",
+    "autoCode": "16",
+    "creatorId": "876708082437197827",
+    "orgId": "100000000000000001",
+    "currentStepId": "1398110129127247874",
+    "nextSteps": [
+        {
+            "currentUserId": "876708082437197827",
+            "name": "审核",
+            "id": "1398110129127247874"
+        }
+    ],
+    "auditInfo": "APPROVE",
+    "currentUserId": "876708082437197827",
+    "handledUsers": "[]",
+    "processId": "1398216099576762369",
+    "handledSteps": "[]",
+    "id": "1398216099576762369",
+    "formId": "19",
+    "creator": "管理员",
+    "formType": "5",
+    "currentUserName": "admin",
+    "currentStepName": "详细信息填写",
+    "formInfo": {
+        "layoutJson": [
+            {
+                "title": "申请信息",
+                "items": [
+                    {
+                        "field": "input_wgjDSC",
+                        "defaultValue": "名字",
+                        "label": "名字2",
+                        "type": "plain"
+                    },
+                    {
+                        "field": "input_NazmNL",
+                        "defaultValue": "1221",
+                        "label": "输入框",
+                        "type": "plain"
+                    },
+                    {
+                        "field": "radio_Ttgx4c",
+                        "defaultValue": "b",
+                        "label": "单选",
+                        "type": "plain"
+                    },
+                    {
+                        "field": "checkboxes_X7lN2Y",
+                        "defaultValue": "\"B\",\"C\"",
+                        "label": "多选",
+                        "type": "plain"
+                    },
+                    {
+                        "field": "input_YfMDXc",
+                        "label": "内容",
+                        "type": "input"
+                    },
+                    {
+                        "field": "input_n_l6LA",
+                        "label": "姓名",
+                        "type": "input"
+                    },
+                    {
+                        "field": "checkboxes_kwzEtz",
+                        "options": [
+                            {
+                                "label": "早上",
+                                "value": "早上"
+                            },
+                            {
+                                "label": "中午",
+                                "value": "中午"
+                            },
+                            {
+                                "label": "下午",
+                                "value": "下午"
+                            },
+                            {
+                                "label": "晚上",
+                                "value": "晚上"
+                            }
+                        ],
+                        "label": "时间",
+                        "type": "checkbox"
+                    }
+                ]
+            }
+        ]
+    },
+    "createTime": "2021-05-28 17:54:30",
+    "name": "标准请假流",
+    "status": "VERIFYING",
+    "history": [
+        {
+            "attachments": [],
+            "formId": "19",
+            "formType": "5",
+            "handleTime": "2021-05-28 17:54:31",
+            "id": "1398216101141237762",
+            "processId": "1398109615576666114",
+            "processInstanceId": "1398216099576762369",
+            "processInstanceName": "标准请假流",
+            "result": "INITED",
+            "userId": "876708082437197827",
+            "userName": "管理员",
+            "_index": "_0"
+        },
+        {
+            "attachments": [],
+            "formId": "19",
+            "formType": "5",
+            "handleTime": "2021-05-28 17:55:23",
+            "id": "1398216321577078785",
+            "processId": "1398109615576666114",
+            "processInstanceId": "1398216099576762369",
+            "processInstanceName": "标准请假流",
+            "result": "HANDLED_APPROVED",
+            "stepId": "1398110008822026242",
+            "stepName": "详细信息填写",
+            "userId": "876708082437197827",
+            "userName": "admin",
+            "_index": "_1"
+        },
+        {
+            "attachments": [],
+            "formId": "19",
+            "formType": "5",
+            "handleTime": "2021-05-28 17:55:36",
+            "id": "1398216375264169986",
+            "processId": "1398109615576666114",
+            "processInstanceId": "1398216099576762369",
+            "processInstanceName": "标准请假流",
+            "result": "HANDLED_ROLLBACK",
+            "stepId": "1398110129127247874",
+            "stepName": "审核",
+            "userId": "876708082437197827",
+            "userName": "admin",
+            "_index": "_2"
+        }
+    ]
+ }
+
+
+### 获取我的申请 或 代办事项 列表信息 currentFlag 决定是 我的申请 还是 代办事项
+GET {{endpoint}}/api/wf/instanceAndForm/byTableJSON/{id}?currentFlag=true
+content-type: application/json
+accessToken: {{token}}
+
+### 获取我的申请 或 代办事项 详情页信息 currentFlag 决定是 我的申请 还是 代办事项
+GET {{endpoint}}/api/wf/instanceAndForm/byTableJSON/{id}?currentFlag=true
+content-type: application/json
+accessToken: {{token}}
+
+
+###  获取某个流程实例的结构
+GET {{endpoint}}/api/wf/instanceAndForm/byTableJSON/{id}
+content-type: application/json
+accessToken: {{token}}
+
+### 开始步骤的值 配合获取流程实例的结构 方法 一起使用
+GET {{endpoint}}/api/wf/instanceAndForm/value/{id}
+content-type: application/json
+accessToken: {{token}}
+
+###  当前步骤的值 配合获取流程实例的结构 方法 一起使用
+GET {{endpoint}}/api/wf/instanceAndForm/value/inCurrent/{id}
+content-type: application/json
+accessToken: {{token}}
+
+###  已发起的流程列表 根据参数type 决定是执行人还是申请人 CREATOR 申请人 CURRENT 执行人
+GET {{endpoint}}/api/wf/instances?type=CREATOR
+content-type: application/json
+accessToken: {{token}}
