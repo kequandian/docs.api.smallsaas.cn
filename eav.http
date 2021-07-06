@@ -1,6 +1,19 @@
 @endpoint = http://192.168.3.239:8090
-### eav 获取数据服务列表
+### eav 获取数据服务 设计的表的列表 搜索过滤：typeId 根据类型分类，entityType=CRUD_FORM 搜索eav中用于数据服务的表设计
 GET {{endpoint}}/api/crud/eavEntityType/eavEntityTypes/entity?entityType=CRUD_FORM&typeId=
 content-type: application/json
 Authorization:Bearer {{token}}
 
+### 根据id获取数据服务设计的表中的数据
+GET {{endpoint}}/api/crud/eav/dataService/{id}
+content-type: application/json
+Authorization:Bearer {{token}}
+
+### 新增对应设计表中的数据   传参待测试
+POST {{endpoint}}/api/eav/entities/newValue/{id}
+content-type: application/json
+Authorization:Bearer {{token}}
+
+{
+
+}
