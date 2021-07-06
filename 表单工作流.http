@@ -2,7 +2,7 @@
 ### 虚拟表单新增
 POST {{endpoint}}/api/crud/virtualForm/virtualForms
 content-type: application/json
-accessToken: {{token}}
+Authorization:Bearer {{token}}
 
 {
   "entityName": "entityName",
@@ -15,18 +15,18 @@ accessToken: {{token}}
 ### 虚拟表单详情
 GET {{endpoint}}/api/crud/virtualForm/virtualForms/7
 content-type: application/json
-accessToken: {{token}}
+Authorization:Bearer {{token}}
 
 ### 虚拟表单列表
 GET {{endpoint}}/api/crud/virtualForm/virtualForms
 content-type: application/json
-accessToken: {{token}}
+Authorization:Bearer {{token}}
 
 
 ### 虚拟表单修改 children数组里面的信息用于修改字段信息
 PUT {{endpoint}}/api/crud/virtualForm/virtualForms/1
 content-type: application/json
-accessToken: {{token}}
+Authorization:Bearer {{token}}
 
 {
   "entityName": "332",
@@ -64,7 +64,7 @@ accessToken: {{token}}
 ### 虚拟表单删除
 DELETE {{endpoint}}/api/crud/virtualForm/virtualForms/2
 content-type: application/json
-accessToken: {{token}}
+Authorization:Bearer {{token}}
 
 
 
@@ -72,12 +72,12 @@ accessToken: {{token}}
 ### 根据id查看工作流详情
 GET {{endpoint}}/api/wf/processes/1397864825052286978
 content-type: application/json
-accessToken: {{token}}
+Authorization:Bearer {{token}}
 
 ### 发起一个流程
 POST {{endpoint}}/api/wf/instances/instanceAndForm
 content-type: application/json
-accessToken: {{token}}
+Authorization:Bearer {{token}}
 
 {
     "checkboxes_2yiV1D": [
@@ -100,7 +100,7 @@ accessToken: {{token}}
 ###  向前推进流程        相较于发起流程 需要额外的流程实例信息 此处提交的测试数据出自之前前端的提交
 POST  {{endpoint}}/api/wf/instances/instanceAndForm/push
 content-type: application/json
-accessToken: {{token}}
+Authorization:Bearer {{token}}
 
 
  {
@@ -251,30 +251,30 @@ accessToken: {{token}}
 ### 获取我的申请 或 代办事项 列表信息 currentFlag 决定是 我的申请 还是 代办事项
 GET {{endpoint}}/api/wf/instanceAndForm/byTableJSON/{id}?currentFlag=true
 content-type: application/json
-accessToken: {{token}}
+Authorization:Bearer {{token}}
 
 ### 获取我的申请 或 代办事项 详情页信息 currentFlag 决定是 我的申请 还是 代办事项
 GET {{endpoint}}/api/wf/instanceAndForm/byTableJSON/{id}?currentFlag=true
 content-type: application/json
-accessToken: {{token}}
+Authorization:Bearer {{token}}
 
 
 ###  获取某个流程实例的结构
 GET {{endpoint}}/api/wf/instanceAndForm/byTableJSON/{id}
 content-type: application/json
-accessToken: {{token}}
+Authorization:Bearer {{token}}
 
 ### 开始步骤的值 配合获取流程实例的结构 方法 一起使用
 GET {{endpoint}}/api/wf/instanceAndForm/value/{id}
 content-type: application/json
-accessToken: {{token}}
+Authorization:Bearer {{token}}
 
 ###  当前步骤的值 配合获取流程实例的结构 方法 一起使用
 GET {{endpoint}}/api/wf/instanceAndForm/value/inCurrent/{id}
 content-type: application/json
-accessToken: {{token}}
+Authorization:Bearer {{token}}
 
 ###  已发起的流程列表 根据参数type 决定是执行人还是申请人 CREATOR 申请人 CURRENT 执行人
 GET {{endpoint}}/api/wf/instances?type=CREATOR
 content-type: application/json
-accessToken: {{token}}
+Authorization:Bearer {{token}}

@@ -1,0 +1,6 @@
+@endpoint = http://192.168.3.239:8090
+### eav 获取数据服务列表
+GET {{endpoint}}/api/crud/eavEntityType/eavEntityTypes/entity?entityType=CRUD_FORM&typeId=
+content-type: application/json
+Authorization:Bearer {{token}}
+
