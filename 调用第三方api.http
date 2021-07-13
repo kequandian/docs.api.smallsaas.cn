@@ -1,0 +1,35 @@
+### 仓库地址 git@github.com:smallsaas/sports-it-ai.git Oauth分支
+### 苹果登录
+POST http://ai.f.gateway.host.smallsaas.cn:81/api/sys/oauth/app/apple/login
+Content-Type: application/x-www-form-urlencoded
+
+user=appleUserInfo&email=111@126.com&code=122
+
+### 苹果注册
+POST http://ai.f.gateway.host.smallsaas.cn:81/api/sys/oauth/app/apple/register
+Content-Type: application/x-www-form-urlencoded
+
+user=appleUserInfo2&email=111@126.com&code=122&username=app31&password=111111
+
+
+### app注册 默认设置 app=public type = 1
+POST http://ai.f.gateway.host.smallsaas.cn:81/api/sys/oauth/app/register
+Content-Type: application/x-www-form-urlencoded
+
+username=app31&password=111111
+
+### 小程序登录 由于部分字段会过期，此处只做参数展示
+POST http://ai.f.gateway.host.smallsaas.cn:81/api/u/bind/login
+Content-Type: application/x-www-form-urlencoded
+
+iv=WLZx4+mK4mYM0593vGs82Q==
+&encryptedData=5hBTWO1jtKm1nOLwigpa5xp4h/N6y4V3kJ1+6/dLsZm1Ccx819afG0y16HA2eQ2BK4n1cNCEFVInAXhojdXGRWlxtsCcDheFGSg6/5GgCyUws5jNgKjQ9mzXmkLfErV61Vj6s+6X/gs2wqVyww2RZTJLSkfnzHXfwfx/Qn03eOZn2H+56/FZ1DRiG5LT8G0J3TKf/5uBz62F8HlWgGVensAwo4eDa17itdeexwqoxlyJFs73Cmh0ca0QtWy/qvXcSZFmLKm9j3sJ/lIakD7D4drtsj9Zk4FfQmG3oANrQXMXbI83RopNn/lVebqNC5QRDChSDlWooi/uEwD4QIaz3B6xmGDhm8XsYWv23dgphsz15sQYfd9g/S2Cz/d0Qo9N1g7J44KqMp+KatvdfYsudROXvLt+T0i34/9sqej/7X7vT0hmNjzQGZyCChCe6RPCw87rZIdUs+m6esYo92Jo+A==
+&from=2
+&app=internal
+&auth=063EnWZv3ZxvIW2vlp3w3vvYNU0EnWZ1
+&type=4
+&rawData={"nickName":"微信用户","gender":0,"language":"","city":"","province":"","country":"","avatarUrl":"https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132"}
+
+
+### 企业信息 调用：https://r.zbsoft.top/api.flow.process/instanceListPage
+GET http://ai.f.gateway.host.smallsaas.cn:81/api/u/companyInfo
